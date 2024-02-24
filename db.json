@@ -1,0 +1,22 @@
+{
+    "recetas": [
+        {
+            "id": 1,
+            "titulo": "receta 1",
+            "imagen": "url",
+            "descripcionBreve": "descripcion de la receta breve",
+            "ingredientes": "ingredientes",
+            "categoria": "categoria",
+            "instrucciones": "instruccion de la receta"
+        },
+        {
+            "id": 2,
+            "titulo": "receta 2",
+            "imagen": "url2",
+            "descripcionBreve": "descripcion de la receta breve",
+            "ingredientes": "ingredientes",
+            "categoria": "categoria",
+            "instrucciones": "instruccion de la receta"
+        }
+    ]
+}
