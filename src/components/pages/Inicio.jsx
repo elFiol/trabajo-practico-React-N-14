@@ -11,10 +11,10 @@ const Inicio = () => {
             <Container className='my-3'>
                 <h3 className='text-warning mb-3'>Recetas Disponibles</h3>
                 <Row>
+                    {/* <CardRecetas></CardRecetas>
                     <CardRecetas></CardRecetas>
                     <CardRecetas></CardRecetas>
-                    <CardRecetas></CardRecetas>
-                    <CardRecetas></CardRecetas>
+                    <CardRecetas></CardRecetas> */}
                 </Row>
             </Container>
         </section>
