@@ -9,6 +9,7 @@ const Inicio = () => {
                 <h2 className='text-center'>Recetas para la cocina</h2>
             </div>
             <Container className='my-3'>
+                <h3 className='text-warning mb-3'>Recetas Disponibles</h3>
                 <Row>
                     <CardRecetas></CardRecetas>
                     <CardRecetas></CardRecetas>
