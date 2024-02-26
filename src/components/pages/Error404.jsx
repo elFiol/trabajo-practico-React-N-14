@@ -7,7 +7,7 @@ const Error404 = () => {
             <img src={Error} alt="icono Error" className="w-25"/>
             <h2 className="text-warning">No se encontro la Pagina que buscabas</h2>
             <h3 className="my-3">Volver al inicio</h3>
-            <Link className="btn btn-warning mb-3">Volver</Link>
+            <Link to="/" className="btn btn-warning mb-3">Volver</Link>
         </section>
     );
 };
