@@ -1,45 +1,132 @@
-import { Container, Form } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 const FormularioReceta = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const recetasValidado = async (receta) => {
+    console.log(receta)
+  }
   return (
     <section className="mainSection">
       <Container>
         <h1 className="colorLabels display-2 mb-3">Formulario de recetas</h1>
-        <Form>
+        <Form onSubmit={handleSubmit(recetasValidado)}>
           <Form.Group className="mb-4">
             <Form.Label className="colorLabels">
               Nombre de la receta*
             </Form.Label>
-            <Form.Control type="text" placeholder="Ej: Fideos con salsa" />
+            <Form.Control type="text" placeholder="Ej: Fideos con salsa" {...register("titulo", {
+              required: "el titulo es obligatorio",
+              minLength: {
+                value: 2,
+                message: "El titulo debe tener como minimo 2 caracteres"
+              },
+              maxLength: {
+                value: 30,
+                message: "el Titulo no puede tener mas de 30 caracteres"
+              }
+            })} />
+            <Form.Text className="text-danger">
+              {errors.titulo?.message}
+            </Form.Text>
           </Form.Group>
           <Form.Group className="mb-4">
             <Form.Label className="colorLabels">Tipo de cocina*</Form.Label>
             <Form.Control
               type="text"
               placeholder="Ej: Italiana, Mexicana, Asiática, Mediterránea, etc."
+              {
+              ...register("categoria", {
+                required: "el tipo de cocina es obligatorio",
+                minLength: {
+                  value: 3,
+                  message: "la categoria debe tener como minimo 3 caracteres"
+                },
+                maxLength: {
+                  value: 20,
+                  message: "la cagoria solo puede tener hasta 20 caracteres"
+                }
+              })
+              }
             />
+            <Form.Text className="text-danger">
+              {errors.categoria?.message}
+            </Form.Text>
           </Form.Group>
           <Form.Group className="mb-4">
             <Form.Label className="colorLabels">Ingrediente*</Form.Label>
             <Form.Control
               type="text"
               placeholder="Espacio para ingresar los ingredientes, separados por comas o en líneas separadas"
+              {
+                ...register("ingredientes",{
+                  required: "los ingredientes son obligatorios",
+                  minLength: {
+                    value: 5,
+                    message: "las ingredientes deben tener como minimo 5 caracteres"
+                  },
+                  maxLength: {
+                    value: 80,
+                    message: "los ingredientes solo pueden tener como maximo 80 caracteres"
+                  }
+                })
+              }
             />
-          </Form.Group>
-          <Form.Group className="mb-4">
-            <Form.Label className="colorLabels">
-              Tiempo de preparación*{" "}
-            </Form.Label>
-            <Form.Control type="text" placeholder="Ej: 1 hora, 2 hora" />
+            <Form.Text className="text-danger">
+              {errors.ingredientes?.message}
+            </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label className="colorLabels">Cargar imagen</Form.Label>
-            <Form.Control type="text" placeholder="Ej: www.lugar.com/imagenes/comida.png"/>
+            <Form.Label className="colorLabels">Cargar imagen*</Form.Label>
+            <Form.Control type="text" placeholder="Ej: www.lugar.com/imagenes/comida.png" 
+            {...register("imagen", {
+              required: "la imagen es obligatoria",
+              pattern: {
+                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
+                message: "Por favor, ingresa una URL de imagen válida"
+              }
+            })}/>
+            <Form.Text className="text-danger">
+              {errors.imagen?.message}
+            </Form.Text>
           </Form.Group>
           <Form.Group className="mb-4">
             <Form.Label className="colorLabels">Instrucciones* </Form.Label>
-            <Form.Control as="textarea" placeholder="agregue aqui su contenido de instrucciones" rows={3} />
+            <Form.Control as="textarea" placeholder="agregue aqui su contenido de instrucciones" rows={3}
+            {...register("instrucciones",{
+              required: "las instrucciones son obligatorias",
+              minLength: {
+                value: 30,
+                message: "las instrucciones deben tener como minimo 30 caracteres"
+              },
+              maxLength: {
+                value: 100,
+                message: "las instrucciones solo pueden tener como maximo 100 caracteres"
+              }
+            })} />
+            <Form.Text className="text-danger">
+              {errors.instrucciones?.message}
+            </Form.Text>
           </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label className="colorLabels">Descripcion Breve* </Form.Label>
+            <Form.Control as="textarea" placeholder="agregue aqui una breve descripcion" rows={3}
+            {...register("descripcionBreve",{
+              required: "la descripcion es obligatoria",
+              minLength: {
+                value: 10,
+                message: "las descripcion deben tener como minimo 10 caracteres"
+              },
+              maxLength: {
+                value: 60,
+                message: "las descripcion solo pueden tener como maximo 60 caracteres"
+              }
+            })} />
+            <Form.Text className="text-danger">
+              {errors.descripcionBreve?.message}
+            </Form.Text>
+          </Form.Group>
+          <Button variant="warning" className="mb-3" type="submit">Guardar</Button>
         </Form>
       </Container>
     </section>
