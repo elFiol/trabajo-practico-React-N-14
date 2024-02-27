@@ -28,11 +28,6 @@ body{
   object-fit: cover;
 }
 
-.navBar {
+.navBar{
   background: #353535;
-}
-
-.navLink {
-  color: #ffff;
-  font-size: 2rem;
 }

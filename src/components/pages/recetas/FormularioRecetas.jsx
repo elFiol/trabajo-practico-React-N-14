@@ -26,20 +26,19 @@ const FormularioReceta = () => {
               placeholder="Espacio para ingresar los ingredientes, separados por comas o en líneas separadas"
             />
           </Form.Group>
-
           <Form.Group className="mb-4">
             <Form.Label className="colorLabels">
               Tiempo de preparación*{" "}
             </Form.Label>
             <Form.Control type="text" placeholder="Ej: 1 hora, 2 hora" />
           </Form.Group>
-          <Form.Group controlId="formFile" className="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label className="colorLabels">Cargar imagen</Form.Label>
-            <Form.Control type="file" />
+            <Form.Control type="text" placeholder="Ej: www.lugar.com/imagenes/comida.png"/>
           </Form.Group>
           <Form.Group className="mb-4">
             <Form.Label className="colorLabels">Instrucciones* </Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Control as="textarea" placeholder="agregue aqui su contenido de instrucciones" rows={3} />
           </Form.Group>
         </Form>
       </Container>

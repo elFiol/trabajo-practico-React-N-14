@@ -13,7 +13,7 @@ function App() {
       <Menu></Menu>
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
-        <Route exact path="/crearRecetas" element={<formularioRecetas></formularioRecetas>}></Route>
+        <Route exact path="/crearRecetas" element={<FormularioReceta></FormularioReceta>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
