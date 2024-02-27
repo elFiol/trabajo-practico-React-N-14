@@ -10,13 +10,13 @@
       "id": "1"
     },
     {
-      "id": "2",
       "titulo": "receta 2",
-      "imagen": "url2",
-      "descripcionBreve": "descripcion de la receta breve",
-      "ingredientes": "ingredientes",
       "categoria": "categoria",
-      "instrucciones": "instruccion de la receta"
+      "ingredientes": "ingredientes",
+      "imagen": "https://www.lumilagro.com.ar/wp-content/uploads/2021/01/termo-lumilagro-luminox-boca-escudo-1.jpg",
+      "instrucciones": "instruccion de la receta ffewopkfopewpfewopefopewfowefpwepwewewepp",
+      "descripcionBreve": "descripcion de la receta breve",
+      "id": "2"
     }
   ]
 }

@@ -5,7 +5,7 @@ import { editarRecetaAPI, obtenerRecetaAPI } from "../../../helper/queries";
 import { useParams } from "react-router";
 import Swal from "sweetalert2";
 
-const FormularioReceta = ({ editar }) => {
+const FormularioReceta = ({ editar, titulo }) => {
   const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
   const recetasValidado = async (receta) => {
     console.log(receta)
@@ -76,7 +76,7 @@ const FormularioReceta = ({ editar }) => {
   return (
     <section className="mainSection">
       <Container>
-        <h1 className="colorLabels display-2 mb-3">Formulario de recetas</h1>
+        <h1 className="colorLabels display-2 mb-3">{titulo} de recetas</h1>
         <Form onSubmit={handleSubmit(recetasValidado)}>
           <Form.Group className="mb-4">
             <Form.Label className="colorLabels">
