@@ -13,7 +13,8 @@ function App() {
       <Menu></Menu>
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
-        <Route exact path="/crearRecetas" element={<FormularioReceta></FormularioReceta>}></Route>
+        <Route exact path="/administrador/crearRecetas" element={<FormularioReceta editar={false}></FormularioReceta>}></Route>
+        <Route exact path="/administrador/editarRecetas/:id" element={<FormularioReceta editar={true}></FormularioReceta>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
