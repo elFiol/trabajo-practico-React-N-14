@@ -15,3 +15,12 @@
     height: 400px;
     object-fit: cover;
 }
+
+.navBar{
+    background: #353535;
+}
+
+.navLink{
+    color: #ffff;
+    font-size: 2rem;
+}

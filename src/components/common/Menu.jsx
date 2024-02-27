@@ -1,16 +1,18 @@
 import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
+import logoReceta from '../../assets/RoyalChef_logo.png'
 
 const Menu = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="navBar">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Brand href="#home"><img src={logoReceta} alt="imagen del logo" className='img-fluid' width={150} /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+        <Navbar.Collapse id="basic-navbar-nav" >
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#link">Recetas</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <Nav.Link href="#home" className='navLink'>Inicio</Nav.Link>
+            <Nav.Link href="#link" className='navLink'>Recetas</Nav.Link>
+            <Nav.Link href="#link" className='navLink'>Nosotros</Nav.Link>
+            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -20,7 +22,7 @@ const Menu = () => {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
