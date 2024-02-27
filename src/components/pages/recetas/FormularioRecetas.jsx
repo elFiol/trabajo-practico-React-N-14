@@ -1,17 +1,27 @@
 import { useEffect } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { obtenerRecetaAPI } from "../../../helper/queries";
+import { useParams } from "react-router";
 
 const FormularioReceta = ({ editar }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const recetasValidado = async (receta) => {
     console.log(receta)
   }
+  const {id} = useParams()
+
   useEffect(() => {
     if (editar) {
-        
+      cargarDatos()
     }
   })
+  const cargarDatos = async () => {
+    try {
+      const respuesta = await obtenerRecetaAPI(id)
+      console.log(respuesta)
+    } catch (error) { console.log(error) }
+  }
   return (
     <section className="mainSection">
       <Container>

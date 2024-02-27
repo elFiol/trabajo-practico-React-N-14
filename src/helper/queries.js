@@ -1,12 +1,12 @@
-const URL_PRODUCTO = import.meta.env.VITE_API_PRODUCTO;
+const URL_RECETAS = import.meta.env.VITE_API_RECETAS;
 
 // GET TODO
 
 export const leerRecetasAPI = async () => {
     try {
-      const respuesta = await fetch(URL_PRODUCTO)
-      const productos = await respuesta.json()
-      return productos
+      const respuesta = await fetch(URL_RECETAS)
+      const recetas = await respuesta.json()
+      return recetas
     } catch (error) {
       console.log(error);
     }
@@ -14,11 +14,12 @@ export const leerRecetasAPI = async () => {
 
 // GET SOLO
 
-export const obtenerRecetaAPI = async () => {
+export const obtenerRecetaAPI = async (id) => {
     try {
-      const respuesta = await fetch(URL_PRODUCTO)
-      const productos = await respuesta.json()
-      return productos
+      console.log(URL_RECETAS + "/" + id)
+      const respuesta = await fetch(URL_RECETAS + "/" + id)
+      const receta = await respuesta.json()
+      return receta
     } catch (error) {
       console.log(error);
     }
