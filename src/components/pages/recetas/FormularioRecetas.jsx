@@ -1,25 +1,68 @@
 import { useEffect } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { obtenerRecetaAPI } from "../../../helper/queries";
+import { editarRecetaAPI, obtenerRecetaAPI } from "../../../helper/queries";
 import { useParams } from "react-router";
+import Swal from "sweetalert2";
 
 const FormularioReceta = ({ editar }) => {
   const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
   const recetasValidado = async (receta) => {
     console.log(receta)
+    if (editar) {
+      const respuesta = await editarRecetaAPI(receta, id)
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "Se a modificado la receta",
+          icon: "success",
+          showClass: {
+            popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `
+          },
+          hideClass: {
+            popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `
+          }
+        });
+      } else {
+        Swal.fire({
+          title: "Se produjo un error al modificar la receta",
+          icon: "error",
+          showClass: {
+            popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `
+          },
+          hideClass: {
+            popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `
+          }
+        })
+      }
+    }
   }
-  const {id} = useParams()
+  const { id } = useParams()
 
   useEffect(() => {
     if (editar) {
       cargarDatos()
     }
-  },[])
+  }, [])
   const cargarDatos = async () => {
     try {
       const respuesta = await obtenerRecetaAPI(id)
-      if(respuesta.status === 200){
+      if (respuesta.status === 200) {
         const recetaEncontrado = await respuesta.json();
         setValue("titulo", recetaEncontrado.titulo)
         setValue("imagen", recetaEncontrado.imagen)
