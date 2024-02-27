@@ -16,10 +16,8 @@ export const leerRecetasAPI = async () => {
 
 export const obtenerRecetaAPI = async (id) => {
     try {
-      console.log(URL_RECETAS + "/" + id)
       const respuesta = await fetch(URL_RECETAS + "/" + id)
-      const receta = await respuesta.json()
-      return receta
+      return respuesta
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +29,7 @@ export const obtenerRecetaAPI = async (id) => {
 
 export const borrarRecetaAPI = async (id) => {
     try {
-      const respuesta = await fetch(`${URL_PRODUCTO}/${id}`,{
+      const respuesta = await fetch(`${URL_RECETAS}/${id}`,{
         method: "DELETE",
       })
       return respuesta

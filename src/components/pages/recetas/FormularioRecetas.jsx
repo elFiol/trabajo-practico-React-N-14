@@ -5,7 +5,7 @@ import { obtenerRecetaAPI } from "../../../helper/queries";
 import { useParams } from "react-router";
 
 const FormularioReceta = ({ editar }) => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
   const recetasValidado = async (receta) => {
     console.log(receta)
   }
@@ -15,11 +15,19 @@ const FormularioReceta = ({ editar }) => {
     if (editar) {
       cargarDatos()
     }
-  })
+  },[])
   const cargarDatos = async () => {
     try {
       const respuesta = await obtenerRecetaAPI(id)
-      console.log(respuesta)
+      if(respuesta.status === 200){
+        const recetaEncontrado = await respuesta.json();
+        setValue("titulo", recetaEncontrado.titulo)
+        setValue("imagen", recetaEncontrado.imagen)
+        setValue("instrucciones", recetaEncontrado.instrucciones)
+        setValue("ingredientes", recetaEncontrado.ingredientes)
+        setValue("descripcionBreve", recetaEncontrado.descripcionBreve)
+        setValue("categoria", recetaEncontrado.categoria)
+      }
     } catch (error) { console.log(error) }
   }
   return (
