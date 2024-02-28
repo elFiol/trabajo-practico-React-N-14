@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { editarRecetaAPI, obtenerRecetaAPI } from "../../../helper/queries";
 import { useParams } from "react-router";
 import Swal from "sweetalert2";
+import { CrearProductoAPI } from "../../../helper/queries";
 
 const FormularioReceta = ({ editar, titulo }) => {
   const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
@@ -46,6 +47,49 @@ const FormularioReceta = ({ editar, titulo }) => {
             animate__fadeOutDown
             animate__faster
           `
+          }
+        })
+      }
+    }
+    else{
+      const respuesta = await CrearProductoAPI(receta);
+      console.log(respuesta);
+      if(respuesta.status === 201){
+        Swal.fire({
+          title: "Se a añadido el producto",
+          icon: "success",
+          showClass: {
+            popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `
+          },
+          hideClass: {
+            popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `
+          }
+        });
+      } else {
+        Swal.fire({
+          title: "Se produjo un error al añadir el producto",
+          icon: "error",
+          showClass: {
+            popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `
+          },
+          hideClass: {
+            popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `
           }
         })
       }

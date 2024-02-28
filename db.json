@@ -1,22 +1,22 @@
 {
   "recetas": [
     {
-      "titulo": "receta 1",
-      "categoria": "categoria",
-      "ingredientes": "ingredientes, fiewjofjeiwo, fewijfewopfewo, oiewfkopefwkpewf",
+      "titulo": "Panchitos",
+      "categoria": "Paraguay",
+      "ingredientes": "pan, salchicha, mayonesa",
       "imagen": "https://www.lumilagro.com.ar/wp-content/uploads/2021/01/termo-lumilagro-luminox-boca-escudo-1.jpg",
-      "instrucciones": "instruccion de la recetafewokofewppoewfkoewfopewfopewfpoewfkewf",
-      "descripcionBreve": "descripcion de la receta breve",
-      "id": "1"
+      "instrucciones": "dsfdsfsdfdsaFRRHYJHGDJGHDdfsfds",
+      "descripcionBreve": "JHGJHGDHFSDRASRAREREW",
+      "id": "076b"
     },
     {
-      "titulo": "receta 2",
-      "categoria": "categoria",
-      "ingredientes": "ingredientes",
+      "id": "3245",
+      "titulo": "arroz con salsa",
+      "categoria": "Argentina",
+      "ingredientes": "arroz, salsa",
       "imagen": "https://www.lumilagro.com.ar/wp-content/uploads/2021/01/termo-lumilagro-luminox-boca-escudo-1.jpg",
-      "instrucciones": "instruccion de la receta ffewopkfopewpfewopefopewfowefpwepwewewepp",
-      "descripcionBreve": "descripcion de la receta breve",
-      "id": "2"
+      "instrucciones": "adasFDAGTFSUYIUYUFKFGKJFJHFJHF",
+      "descripcionBreve": "FJYUJFTRDSTRSYTRYRYTRYRUYTUTY"
     }
   ]
 }
