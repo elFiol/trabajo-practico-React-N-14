@@ -1,10 +1,22 @@
 {
   "recetas": [
     {
-      "id": "31ce"
+      "titulo": "Panchitos",
+      "categoria": "Paraguay",
+      "ingredientes": "pan, salchicha, mayonesa",
+      "imagen": "https://www.lumilagro.com.ar/wp-content/uploads/2021/01/termo-lumilagro-luminox-boca-escudo-1.jpg",
+      "instrucciones": "dsfdsfsdfdsaFRRHYJHGDJGHDdfsfds",
+      "descripcionBreve": "JHGJHGDHFSDRASRAREREW",
+      "id": "076b"
     },
     {
-      "id": "67f6"
+      "id": "3245",
+      "titulo": "arroz con salsa",
+      "categoria": "Argentina",
+      "ingredientes": "arroz, salsa",
+      "imagen": "https://www.lumilagro.com.ar/wp-content/uploads/2021/01/termo-lumilagro-luminox-boca-escudo-1.jpg",
+      "instrucciones": "adasFDAGTFSUYIUYUFKFGKJFJHFJHF",
+      "descripcionBreve": "FJYUJFTRDSTRSYTRYRYTRYRUYTUTY"
     }
   ]
 }

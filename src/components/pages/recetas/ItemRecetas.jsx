@@ -15,7 +15,7 @@ const ItemRecetas = ({receta}) => {
         <Button variant="danger" type="button" onClick={()=>borrarRecetaAPI(receta.id)}>
           <i className="bi bi-trash"></i>
         </Button>
-        <Link className="btn btn-warning">
+        <Link className="btn btn-warning" to={"/administrador/editarRecetas/" + receta.id}>
           <i className="bi bi-pencil-square"></i>
         </Link>
       </td>

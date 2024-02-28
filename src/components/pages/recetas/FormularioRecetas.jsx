@@ -53,7 +53,7 @@ const FormularioReceta = ({ editar, titulo }) => {
       }
     }
     else{
-      const respuesta = await CrearProductoAPI();
+      const respuesta = await CrearProductoAPI(receta);
       console.log(respuesta);
       if(respuesta.status === 201){
         Swal.fire({

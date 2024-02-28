@@ -11,7 +11,6 @@ const Administrador = () => {
     const consultaAPI = async () => {
       const resultado = await leerRecetasAPI();
       setRecetas(resultado);
-      console.log(resultado);
     };
     consultaAPI();
   }, [recetas]);
