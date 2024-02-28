@@ -1,6 +1,20 @@
 import { Container, Button, Table } from "react-bootstrap";
+import ItemRecetas from "./recetas/ItemRecetas";
+import { useEffect, useState } from "react";
+import { leerRecetasAPI } from "../../helper/queries";
 
 const Administrador = () => {
+  const [recetas, setRecetas] = useState([]);
+
+  useEffect(()=>{
+    const consultaAPI = async ()=>{
+      const resultado = await leerRecetasAPI();
+      setRecetas(resultado);
+      console.log(resultado);
+    }
+  },[]);
+
+
   return (
     <section className="mainSection">
       <Container className="my-5">
@@ -24,7 +38,7 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody>
-            
+            <ItemRecetas />
           </tbody>
         </Table>
       </Container>
