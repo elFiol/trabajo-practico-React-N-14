@@ -15,10 +15,8 @@ const Administrador = () => {
             <tr>
               <th>Cod</th>
               <th>Nombre de la receta</th>
-              <th>Tipo de cocina</th>
-              <th>Ingredientes</th>
+              <th>Categoria</th>
               <th>URL imagen</th>
-              <th>Instrucciones</th>
               <th>Descripcion breve</th>
               <th>Opciones</th>
             </tr>
