@@ -17,7 +17,7 @@ const Inicio = () => {
         hacerSolicitud()
     }, [])
     const mostrarComponente = hayElementos ? (recetas.map((receta, posicion) => <CardRecetas key={posicion} receta={receta}></CardRecetas>))
-     : (<p>aqui no hay recetas disponible</p>)
+     : (<p className='text-light'>aqui no hay recetas disponible</p>)
     return (
         <section className='mainSection'>
             <div className='tituloInicio py-4'>
