@@ -1,14 +1,12 @@
-const ItemRecetas = () => {
+const ItemRecetas = ({receta}) => {
   return (
     <tr>
-      <td>1</td>
-      <td>receta 1</td>
-      <td>categoria</td>
+      <td>{receta.id}</td>
+      <td>{receta.titulo}</td>
+      <td>{receta.categoria}</td>
       <td>
-        <img src="" alt="" />
+        <img src={receta.imagen} alt={receta.titulo} className="img-fluid w-100"/>
       </td>
-      <td>Bebida caliente</td>
-      <td></td>
       <td>
         <a className="btn btn-danger mx-2">
           <i className="bi bi-trash"></i>

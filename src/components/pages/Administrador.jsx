@@ -6,14 +6,14 @@ import { leerRecetasAPI } from "../../helper/queries";
 const Administrador = () => {
   const [recetas, setRecetas] = useState([]);
 
-  useEffect(()=>{
-    const consultaAPI = async ()=>{
+  useEffect(() => {
+    const consultaAPI = async () => {
       const resultado = await leerRecetasAPI();
       setRecetas(resultado);
       console.log(resultado);
-    }
-  },[]);
-
+    };
+    consultaAPI();
+  }, []);
 
   return (
     <section className="mainSection">
@@ -29,16 +29,15 @@ const Administrador = () => {
             <tr>
               <th>Cod</th>
               <th>Nombre de la receta</th>
-              <th>Tipo de cocina</th>
-              <th>Ingredientes</th>
+              <th>Categoria</th>
               <th>URL imagen</th>
-              <th>Instrucciones</th>
-              <th>Descripcion breve</th>
               <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
-            <ItemRecetas />
+            {recetas.map((receta, posReceta) => (
+              <ItemRecetas receta={receta} key={posReceta} />
+            ))}
           </tbody>
         </Table>
       </Container>
