@@ -2,6 +2,7 @@ import { Container, Button, Table } from "react-bootstrap";
 import ItemRecetas from "./recetas/ItemRecetas";
 import { useEffect, useState } from "react";
 import { leerRecetasAPI } from "../../helper/queries";
+import { Link } from "react-router-dom";
 
 const Administrador = () => {
   const [recetas, setRecetas] = useState([]);
@@ -20,9 +21,9 @@ const Administrador = () => {
       <Container className="my-5">
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="display-4 colorLabels">Recetas disponibles</h1>
-          <Button variant="primary">
+          <Link className="btn btn-primary" to={"/administrador/crearRecetas"}>
             <i className="bi bi-file-earmark-plus"></i>
-          </Button>
+          </Link>
         </div>
         <Table striped bordered hover className="text-center">
           <thead>
