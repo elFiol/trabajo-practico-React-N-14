@@ -13,7 +13,7 @@ const Administrador = () => {
       console.log(resultado);
     };
     consultaAPI();
-  }, []);
+  }, [recetas]);
 
   return (
     <section className="mainSection">

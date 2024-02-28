@@ -1,22 +1,3 @@
 {
-  "recetas": [
-    {
-      "titulo": "receta 1",
-      "categoria": "categoria",
-      "ingredientes": "ingredientes, fiewjofjeiwo, fewijfewopfewo, oiewfkopefwkpewf",
-      "imagen": "https://www.lumilagro.com.ar/wp-content/uploads/2021/01/termo-lumilagro-luminox-boca-escudo-1.jpg",
-      "instrucciones": "instruccion de la recetafewokofewppoewfkoewfopewfopewfpoewfkewf",
-      "descripcionBreve": "descripcion de la receta breve",
-      "id": "1"
-    },
-    {
-      "titulo": "receta 2",
-      "categoria": "categoria",
-      "ingredientes": "ingredientes",
-      "imagen": "https://www.lumilagro.com.ar/wp-content/uploads/2021/01/termo-lumilagro-luminox-boca-escudo-1.jpg",
-      "instrucciones": "instruccion de la receta ffewopkfopewpfewopefopewfowefpwepwewewepp",
-      "descripcionBreve": "descripcion de la receta breve",
-      "id": "2"
-    }
-  ]
+  "recetas": []
 }

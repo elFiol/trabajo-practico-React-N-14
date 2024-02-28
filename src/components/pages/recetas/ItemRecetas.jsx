@@ -1,3 +1,7 @@
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { borrarRecetaAPI } from "../../../helper/queries";
+
 const ItemRecetas = ({receta}) => {
   return (
     <tr>
@@ -8,12 +12,12 @@ const ItemRecetas = ({receta}) => {
         <img src={receta.imagen} alt={receta.titulo} className="img-fluid w-100"/>
       </td>
       <td>
-        <a className="btn btn-danger mx-2">
+        <Button variant="danger" type="button" onClick={()=>borrarRecetaAPI(receta.id)}>
           <i className="bi bi-trash"></i>
-        </a>
-        <a className="btn btn-warning">
+        </Button>
+        <Link className="btn btn-warning">
           <i className="bi bi-pencil-square"></i>
-        </a>
+        </Link>
       </td>
     </tr>
   );
