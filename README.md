@@ -1,8 +1,20 @@
-# React + Vite
+# Pagina de recetas.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En esta pagina haremos un CRUD de recetas y la mostraremos en la pagina inicio. para ello vamos a utilizar la libreria [json server](https://github.com/typicode/json-server).
 
-Currently, two official plugins are available:
+**¡ATENCION!**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+este proyecto todavia solo funciona en desarrollo.
+
+## Librerias
+- react-bootstrap
+- icon-bootstrap
+- react-hook-form
+- SweetAler2
+- json-server
+
+## Repositorio
+
+[trabajo-practico-react-14](https://github.com/elFiol/trabajo-practico-React-N-14)
+
+### Pagina echa por [Thiago Benjamin Fiol](https://github.com/elFiol) y [Cristian Julian Aballay](https://github.com/julianDev94)

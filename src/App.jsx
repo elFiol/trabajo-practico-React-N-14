@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-icons/font/bootstrap-icons.min.css"
+import Footer from './components/common/Footer'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Inicio from './components/pages/Inicio'
+import Error404 from "./components/pages/Error404"
+import Menu from "./components/common/Menu";
+import FormularioReceta from "./components/pages/recetas/FormularioRecetas";
+import Administrador from "./components/pages/Administrador"
+import DetalleReceta from "./components/pages/recetas/DetalleReceta"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      <Menu></Menu>
+      <Routes>
+        <Route exact path="/" element={<Inicio></Inicio>}></Route>
+        <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
+        <Route exact path="/administrador/crearRecetas" element={<FormularioReceta editar={false} titulo="Crear"></FormularioReceta>}></Route>
+        <Route exact path="/administrador/editarRecetas/:id" element={<FormularioReceta editar={true} titulo="Editar"></FormularioReceta>}></Route>
+        <Route exact path="/detalleReceta/:id" element={<DetalleReceta></DetalleReceta>}></Route>
+        <Route path="*" element={<Error404></Error404>}></Route>
+      </Routes>
+      <Footer></Footer>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
