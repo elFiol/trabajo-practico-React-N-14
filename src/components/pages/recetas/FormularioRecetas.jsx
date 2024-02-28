@@ -9,7 +9,6 @@ import { CrearProductoAPI } from "../../../helper/queries";
 const FormularioReceta = ({ editar, titulo }) => {
   const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
   const recetasValidado = async (receta) => {
-    console.log(receta)
     if (editar) {
       const respuesta = await editarRecetaAPI(receta, id)
       if (respuesta.status === 200) {

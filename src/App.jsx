@@ -7,7 +7,7 @@ import Error404 from "./components/pages/Error404"
 import Menu from "./components/common/Menu";
 import FormularioReceta from "./components/pages/recetas/FormularioRecetas";
 import Administrador from "./components/pages/Administrador"
-
+import DetalleReceta from "./components/pages/recetas/DetalleReceta"
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
         <Route exact path="/administrador/crearRecetas" element={<FormularioReceta editar={false} titulo="Crear"></FormularioReceta>}></Route>
         <Route exact path="/administrador/editarRecetas/:id" element={<FormularioReceta editar={true} titulo="Editar"></FormularioReceta>}></Route>
+        <Route exact path="/detalleReceta/:id" element={<DetalleReceta></DetalleReceta>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
